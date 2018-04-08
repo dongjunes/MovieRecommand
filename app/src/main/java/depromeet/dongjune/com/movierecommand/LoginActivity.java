@@ -4,6 +4,7 @@ import android.content.Intent;
 import android.content.pm.PackageInfo;
 import android.content.pm.PackageManager;
 import android.content.pm.Signature;
+import android.databinding.DataBindingUtil;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Base64;
@@ -24,17 +25,27 @@ import org.json.JSONObject;
 
 import java.util.Arrays;
 
+import depromeet.dongjune.com.movierecommand.databinding.ActivityLoginBinding;
+
 public class LoginActivity extends AppCompatActivity {
 
     private CallbackManager callbackManager;
+    ActivityLoginBinding binding;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        binding = DataBindingUtil.setContentView(this, R.layout.activity_login);
+        setViewPager();
         FacebookSdk.sdkInitialize(getApplicationContext());
-        setContentView(R.layout.activity_login);
         AppEventsLogger.activateApp(this);
 
+    }
+
+    private void setViewPager() {
+        IntroViewAdapter adapter = new IntroViewAdapter(getApplicationContext(), getLayoutInflater());
+        binding.viewpager.setAdapter(adapter);
+        binding.tablayout.setupWithViewPager(binding.viewpager, true);
     }
 
     public void facebookLoginOnClick(View v) {

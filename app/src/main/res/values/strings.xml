@@ -2,5 +2,9 @@
     <string name="app_name">MovieRecommand</string>
     <string name="facebook_app_id">203771800217390</string>
     <string name="fb_login_protocol_scheme">fb203771800217390</string>
+    <string name="intro_text">원하는 키워드를
+    선택하고
+    취향을 저격하는
+    영화를 즐기세요</string>
 
 </resources>
