@@ -1,7 +1,9 @@
-package depromeet.dongjune.com.movierecommand;
+package depromeet.dongjune.com.movierecommand.controller;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+
+import depromeet.dongjune.com.movierecommand.R;
 
 public class MainActivity extends AppCompatActivity {
 

@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="380dp"
     android:layout_height="640dp"
-    tools:context="depromeet.dongjune.com.movierecommand.MainActivity">
+    tools:context="depromeet.dongjune.com.movierecommand.controller.MainActivity">
 
     <TextView
         android:layout_width="wrap_content"

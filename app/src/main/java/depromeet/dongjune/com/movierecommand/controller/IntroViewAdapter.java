@@ -1,4 +1,4 @@
-package depromeet.dongjune.com.movierecommand;
+package depromeet.dongjune.com.movierecommand.controller;
 
 import android.content.Context;
 import android.content.res.Resources;
@@ -9,6 +9,8 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
+
+import depromeet.dongjune.com.movierecommand.R;
 
 public class IntroViewAdapter extends PagerAdapter {
     private Context context;

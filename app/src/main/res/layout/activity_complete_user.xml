@@ -1,0 +1,157 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context=".controller.CompleteUserActivity">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:weightSum="110">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dip"
+            android:layout_weight="10"
+            android:background="#FFFFFF"
+            android:orientation="horizontal"
+            android:weightSum="100">
+
+            <LinearLayout
+                android:layout_width="0dip"
+                android:layout_height="match_parent"
+                android:layout_weight="37.5"></LinearLayout>
+
+            <ImageView
+                android:layout_width="0dip"
+                android:layout_height="match_parent"
+                android:layout_marginBottom="10dp"
+                android:layout_marginTop="10dp"
+                android:layout_weight="25"
+                android:background="@drawable/logo_blue"
+                android:scaleType="fitXY" />
+
+            <LinearLayout
+                android:layout_width="0dip"
+                android:layout_height="match_parent"
+                android:layout_weight="22"></LinearLayout>
+
+
+            <TextView
+                android:id="@+id/complete_text"
+                android:layout_width="0dip"
+                android:layout_height="match_parent"
+                android:layout_weight="15"
+                android:gravity="center"
+                android:paddingRight="3dp"
+                android:text="완료"
+                android:textColor="#000000"
+                android:textSize="16sp" />
+
+        </LinearLayout>
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dip"
+            android:layout_weight="100"
+            android:background="#EEEEEE"
+            android:orientation="vertical"
+            android:weightSum="590">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="0dip"
+                android:layout_weight="50"
+                android:orientation="horizontal"
+                android:weightSum="100">
+
+                <LinearLayout
+                    android:layout_width="0dip"
+                    android:layout_height="match_parent"
+                    android:layout_weight="5"></LinearLayout>
+
+                <TextView
+                    android:layout_width="0dip"
+                    android:layout_height="match_parent"
+                    android:layout_weight="15"
+                    android:gravity="center"
+                    android:text="회원가입"
+                    android:textColor="#898989"
+                    android:textSize="9.5sp" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="0dip"
+                android:layout_weight="70"
+                android:orientation="horizontal"
+                android:weightSum="100">
+
+                <LinearLayout
+                    android:layout_width="0dip"
+                    android:layout_height="match_parent"
+                    android:layout_weight="5"></LinearLayout>
+
+                <ImageView
+                    android:id="@+id/profile_pic"
+                    android:layout_width="0dip"
+                    android:layout_height="match_parent"
+                    android:layout_weight="15"
+                    android:gravity="center"
+                    android:scaleType="fitXY" />
+
+                <LinearLayout
+                    android:layout_width="0dip"
+                    android:layout_height="match_parent"
+                    android:layout_weight="5"></LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="0dip"
+                    android:layout_height="match_parent"
+                    android:layout_weight="50"
+                    android:orientation="vertical"
+                    android:weightSum="50">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="0dip"
+                        android:layout_weight="15"></LinearLayout>
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="0dip"
+                        android:layout_weight="15"
+                        android:text="Facebook 로그인 계정"
+                        android:textColor="#9c9c9c"
+                        android:textSize="11.5sp" />
+
+                    <TextView
+                        android:id="@+id/user_email"
+                        android:layout_width="match_parent"
+                        android:layout_height="0dip"
+                        android:layout_weight="20"
+                        android:textColor="#000000"
+                        android:textSize="13.3sp" />
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="0dip"
+                android:layout_weight="20"></LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="0dip"
+                android:layout_weight="50"
+                android:orientation="vertical"></LinearLayout>
+
+        </LinearLayout>
+
+
+    </LinearLayout>
+</layout>

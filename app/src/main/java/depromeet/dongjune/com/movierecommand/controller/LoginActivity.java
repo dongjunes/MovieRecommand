@@ -1,13 +1,9 @@
-package depromeet.dongjune.com.movierecommand;
+package depromeet.dongjune.com.movierecommand.controller;
 
 import android.content.Intent;
-import android.content.pm.PackageInfo;
-import android.content.pm.PackageManager;
-import android.content.pm.Signature;
 import android.databinding.DataBindingUtil;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.util.Base64;
 import android.util.Log;
 import android.view.View;
 
@@ -21,10 +17,12 @@ import com.facebook.appevents.AppEventsLogger;
 import com.facebook.login.LoginManager;
 import com.facebook.login.LoginResult;
 
+import org.json.JSONException;
 import org.json.JSONObject;
 
 import java.util.Arrays;
 
+import depromeet.dongjune.com.movierecommand.R;
 import depromeet.dongjune.com.movierecommand.databinding.ActivityLoginBinding;
 
 public class LoginActivity extends AppCompatActivity {
@@ -71,9 +69,18 @@ public class LoginActivity extends AppCompatActivity {
                             Log.i("TAG", "AccessToken: " + result.getAccessToken().getToken());
                             setResult(RESULT_OK);
 
+
                             //send server userInfo
                         }
-                        Intent intent = new Intent(LoginActivity.this, MainActivity.class);
+                        Intent intent = new Intent(LoginActivity.this, CompleteUserActivity.class);
+                        Bundle bundle = new Bundle();
+                        try {
+                            bundle.putString("email", String.valueOf(user.get("email")));
+                            Log.d("Check Email", String.valueOf(user.get("email")));
+                        } catch (JSONException e) {
+                            e.printStackTrace();
+                        }
+                        intent.putExtra("email_bundle", bundle);
                         startActivity(intent);
                         finish();
                     }
