@@ -51,8 +51,9 @@ public class CompleteUserActivity extends AppCompatActivity {
             selectedGenreArray.add(genreStr[(int) i.next()]);
         }
         Log.d("CheckingData", selectedGenreArray + "");
-        Intent i = new Intent();
+        Intent i = new Intent(getApplicationContext(), MainActivity.class);
         i.putExtra("genreSelected", selectedGenreArray);
+
         startActivity(i);
         finish();
     }
