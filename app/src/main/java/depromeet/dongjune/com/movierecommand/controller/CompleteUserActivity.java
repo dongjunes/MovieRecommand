@@ -1,5 +1,6 @@
 package depromeet.dongjune.com.movierecommand.controller;
 
+import android.content.Intent;
 import android.databinding.DataBindingUtil;
 import android.graphics.Color;
 import android.graphics.drawable.ShapeDrawable;
@@ -18,6 +19,10 @@ import com.squareup.picasso.Picasso;
 import com.zhy.view.flowlayout.FlowLayout;
 import com.zhy.view.flowlayout.TagAdapter;
 
+import java.util.ArrayList;
+import java.util.HashSet;
+import java.util.Iterator;
+import java.util.Set;
 import java.util.zip.Inflater;
 
 import depromeet.dongjune.com.movierecommand.R;
@@ -39,7 +44,17 @@ public class CompleteUserActivity extends AppCompatActivity {
     }
 
     public void completeOnClick(View v) {
-
+        ArrayList<String> selectedGenreArray = new ArrayList<>();
+        Set<Integer> selectedGenreSet = new HashSet<>();
+        selectedGenreSet = binding.flowLayout.getSelectedList();
+        for (Iterator i = selectedGenreSet.iterator(); i.hasNext(); ) {
+            selectedGenreArray.add(genreStr[(int) i.next()]);
+        }
+        Log.d("CheckingData", selectedGenreArray + "");
+        Intent i = new Intent();
+        i.putExtra("genreSelected", selectedGenreArray);
+        startActivity(i);
+        finish();
     }
 
     private void setProfileImage() {
@@ -67,7 +82,7 @@ public class CompleteUserActivity extends AppCompatActivity {
                 Button genre = (Button) mInflater.inflate(R.layout.flowlayout_item, binding.flowLayout, false);
                 genre.setText(s);
                 genre.setBackground(getResources().getDrawable(R.drawable.box_non_2));
-                Log.d("s", s);
+
                 return genre;
             }
 
