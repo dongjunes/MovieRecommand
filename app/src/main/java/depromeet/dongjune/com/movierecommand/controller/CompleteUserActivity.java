@@ -1,6 +1,7 @@
 package depromeet.dongjune.com.movierecommand.controller;
 
 import android.databinding.DataBindingUtil;
+import android.graphics.Color;
 import android.graphics.drawable.ShapeDrawable;
 import android.graphics.drawable.shapes.OvalShape;
 import android.os.Build;
@@ -9,6 +10,7 @@ import android.os.Bundle;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
+import android.widget.Button;
 import android.widget.TextView;
 
 import com.facebook.Profile;
@@ -36,6 +38,10 @@ public class CompleteUserActivity extends AppCompatActivity {
         setProfileEmail();
     }
 
+    public void completeOnClick(View v) {
+
+    }
+
     private void setProfileImage() {
         binding.profilePic.setBackground(new ShapeDrawable(new OvalShape()));
         if (Build.VERSION.SDK_INT >= 21) {
@@ -58,8 +64,9 @@ public class CompleteUserActivity extends AppCompatActivity {
         binding.flowLayout.setAdapter(new TagAdapter<String>(genreStr) {
             @Override
             public View getView(FlowLayout parent, int position, String s) {
-                TextView genre = (TextView) mInflater.inflate(R.layout.flowlayout_item, binding.flowLayout, false);
+                Button genre = (Button) mInflater.inflate(R.layout.flowlayout_item, binding.flowLayout, false);
                 genre.setText(s);
+                genre.setBackground(getResources().getDrawable(R.drawable.box_non_2));
                 Log.d("s", s);
                 return genre;
             }
@@ -67,11 +74,18 @@ public class CompleteUserActivity extends AppCompatActivity {
             @Override
             public void onSelected(int position, View view) {
                 super.onSelected(position, view);
+                Button btn = (Button) view.findViewById(R.id.genre_btn);
+                btn.setBackground(getResources().getDrawable(R.drawable.box_full_non_2));
+                btn.setTextColor(Color.WHITE);
             }
 
             @Override
             public void unSelected(int position, View view) {
                 super.unSelected(position, view);
+                Button btn = (Button) view.findViewById(R.id.genre_btn);
+                btn.setBackground(getResources().getDrawable(R.drawable.box_non_2));
+                btn.setTextColor(Color.BLUE);
+
             }
         });
 

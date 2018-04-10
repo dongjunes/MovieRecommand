@@ -44,6 +44,7 @@
                 android:layout_height="match_parent"
                 android:layout_weight="15"
                 android:gravity="center"
+                android:onClick="completeOnClick"
                 android:paddingRight="3dp"
                 android:text="완료"
                 android:textColor="#000000"
@@ -479,16 +480,17 @@
                 android:layout_height="0dip"
                 android:layout_weight="20"></LinearLayout>
 
+
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="0dip"
-                android:layout_weight="200">
+                android:layout_weight="200"
+                android:paddingLeft="20dp">
 
                 <com.zhy.view.flowlayout.TagFlowLayout
                     android:id="@+id/flow_layout"
-                    android:layout_width="fill_parent"
+                    android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:padding="10dp"
                     zhc:max_select="-1"></com.zhy.view.flowlayout.TagFlowLayout>
 
             </LinearLayout>

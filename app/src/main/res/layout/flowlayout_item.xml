@@ -1,5 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
-<TextView xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent">
-</TextView>
+<Button xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/genre_btn"
+    android:layout_width="70dp"
+    android:layout_height="35dp"
+    android:textColor="#004eff"
+    android:textSize="10dp"></Button>
