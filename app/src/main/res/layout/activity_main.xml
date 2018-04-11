@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <layout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
+    xmlns:zhc="http://schemas.android.com/apk/res-auto"
     tools:context="depromeet.dongjune.com.movierecommand.controller.MainActivity">
 
     <LinearLayout
@@ -56,11 +57,61 @@
                     android:layout_width="0dip"
                     android:layout_height="match_parent"
                     android:layout_weight="30"
-                    android:gravity="center"
-                    android:text="액션 영화 추천"
+                    android:gravity="left|center"
+                    android:text="장르 선택"
+                    android:textColor="#898989"
+                    android:textSize="7dp" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="0dip"
+                android:layout_weight="27"
+                android:paddingLeft="20dp">
+
+                <com.zhy.view.flowlayout.TagFlowLayout
+                    android:id="@+id/flow_layout_main"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    zhc:max_select="-1"></com.zhy.view.flowlayout.TagFlowLayout>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="0dip"
+                android:layout_weight="7"
+                android:orientation="horizontal"
+                android:weightSum="100">
+
+                <LinearLayout
+                    android:layout_width="0dip"
+                    android:layout_height="match_parent"
+                    android:layout_weight="5"></LinearLayout>
+
+                <TextView
+                    android:layout_width="0dip"
+                    android:layout_height="match_parent"
+                    android:layout_weight="30"
+                    android:gravity="left|center"
+                    android:text="영화 추천"
                     android:textColor="#004eff"
                     android:textSize="11dp" />
             </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="0dip"
+                android:layout_weight="50">
+
+                <android.support.v7.widget.RecyclerView
+                    android:id="@+id/movie_recycler"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"></android.support.v7.widget.RecyclerView>
+
+            </LinearLayout>
+
+
 
         </LinearLayout>
 

@@ -45,14 +45,19 @@ public class CompleteUserActivity extends AppCompatActivity {
 
     public void completeOnClick(View v) {
         ArrayList<String> selectedGenreArray = new ArrayList<>();
+        ArrayList<Integer> selectedGenreIntArray = new ArrayList<>();
         Set<Integer> selectedGenreSet = new HashSet<>();
         selectedGenreSet = binding.flowLayout.getSelectedList();
+        Integer num = 0;
         for (Iterator i = selectedGenreSet.iterator(); i.hasNext(); ) {
-            selectedGenreArray.add(genreStr[(int) i.next()]);
+            num = (Integer) i.next();
+            selectedGenreIntArray.add(num);
+            selectedGenreArray.add(genreStr[num]);
         }
         Log.d("CheckingData", selectedGenreArray + "");
         Intent i = new Intent(getApplicationContext(), MainActivity.class);
         i.putExtra("genreSelected", selectedGenreArray);
+        i.putExtra("genreSelectedInt", selectedGenreIntArray);
 
         startActivity(i);
         finish();
@@ -72,6 +77,8 @@ public class CompleteUserActivity extends AppCompatActivity {
         binding.userEmail.setText(
                 getIntent().getBundleExtra("email_bundle").getString("email"));
 
+        binding.nameText.setText(Profile.getCurrentProfile().getName());
+        binding.genderText.setText("남성");
     }
 
     private void setHashTag() {
@@ -97,10 +104,10 @@ public class CompleteUserActivity extends AppCompatActivity {
 
             @Override
             public void unSelected(int position, View view) {
-                super.unSelected(position, view);
+                super.unSelected(position, view);/*
                 Button btn = (Button) view.findViewById(R.id.genre_btn);
                 btn.setBackground(getResources().getDrawable(R.drawable.box_non_2));
-                btn.setTextColor(Color.BLUE);
+                btn.setTextColor(Color.BLUE);*/
 
             }
         });
